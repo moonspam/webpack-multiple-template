@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <%= htmlWebpackPlugin
+    .tags
+    .headTags
+    .filter((tag) => tag.tagName === 'meta')
+    .join('')
+  %>
+  <meta property="og:image" content="<%= require('./img/share.jpg') %>">
+  <link rel="icon" href="/libs/img/favicon.png">
+
+  <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <%= htmlWebpackPlugin
+    .tags
+    .headTags
+    .filter((tag) => tag.tagName === 'link')
+    .join('')
+  %>
+</head>
+
+<body class="sample">
+
+  <%= require('html-loader!./_template/header.html').default %>
+
+  <div class="app">
+    <h1>한글은 사랑입니다.</h1>
+    <p>웹팩 기본 틀 👍<br><small><a href="sub/sub.html">서브페이지 이동</a></small></p>
+    <p><img src="<%= require('./img/cat/cat.jpg') %>" alt="Cat" width="300" height="300"></p>
+  </div>
+
+  <%= require('html-loader!./_template/footer.html').default %>
+
+  <script src="/libs/js/test.js"></script>
+
+  <%= htmlWebpackPlugin
+    .tags
+    .headTags
+    .filter((tag) => tag.tagName === 'script')
+    .join('')
+  %>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+.sample {
+  header, h1, p, footer {
+    background-color: rgba($color: aqua, $alpha: 0.3);
+    border-color: rgba($color: red, $alpha: 0.5) !important;
+  }
+}
